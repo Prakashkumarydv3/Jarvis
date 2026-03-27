@@ -7,9 +7,9 @@ import os
 import datetime
 # import wikipedia
 
-newsApi = os.environ.get("NEWS_API_KEY", "0f50457f4b0b4ae394b80448881f14b6")
-weatherApi = os.environ.get("WEATHER_API_KEY", "d3321df8cb2282980ce2075c95aa0c28")
-youtubeApi = os.environ.get("YOUTUBE_API_KEY", "AIzaSyAVdCXsObtT6RPGAd-Lmx1OnGlayiGHkAI")
+newsApi = os.environ.get("NEWS_API_KEY")
+weatherApi = os.environ.get("WEATHER_API_KEY")
+youtubeApi = os.environ.get("YOUTUBE_API_KEY")
 
 
 def speak(text):

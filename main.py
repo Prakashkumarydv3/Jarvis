@@ -4,9 +4,10 @@ import pyttsx3
 import requests
 from googleapiclient.discovery import build
 import os
+from dotenv import load_dontenv
 import datetime
 # import wikipedia
-
+load_dotenv()
 newsApi = os.environ.get("NEWS_API_KEY")
 weatherApi = os.environ.get("WEATHER_API_KEY")
 youtubeApi = os.environ.get("YOUTUBE_API_KEY")

@@ -2,10 +2,13 @@ import speech_recognition as sr
 import webbrowser
 import pyttsx3
 import musicLibrary
+import os
+from dotenv import load_dotenv
 import requests
 
 engine = pyttsx3.init()
-newsApi = "0f50457f4b0b4ae394b80448881f14b6"
+newsApi = os.environ.get("NEWS_API_KEY")
+
 
 
 def speak(text):

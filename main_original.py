@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 import requests
 
+load_dotenv()
 engine = pyttsx3.init()
 newsApi = os.environ.get("NEWS_API_KEY")
 

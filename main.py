@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 import os
 from dotenv import load_dotenv
 import datetime
-# import wikipedia
+import wikipedia
 
 load_dotenv()
 
@@ -97,23 +97,21 @@ def processCommand(c):
         else:
             speak("Please specify a city, for example: weather in Mumbai")
 
-    # elif "wikipedia" in c_lower:
-    #     # expects: "wikipedia Albert Einstein"
-    #     query = c_lower.replace("wikipedia", "").strip()
-    #     if query:
-    #         try:
-    #             summary = wikipedia.summary(query, sentences=2)
-    #             speak(summary)
-    #             print(summary)
-    #         except wikipedia.exceptions.DisambiguationError:
-    #             speak("Too many results, please be more specific")
-    #         except wikipedia.exceptions.PageError:
-    #             speak(f"No Wikipedia page found for {query}")
-    #     else:
-    #         speak("Please specify a topic to search on Wikipedia")
+    elif "wikipedia" in c_lower:
+        query = c_lower.replace("wikipedia", "").strip()
+        if query:
+            try:
+                summary = wikipedia.summary(query, sentences=2)
+                speak(summary)
+                print(summary)
+            except wikipedia.exceptions.DisambiguationError:
+                speak("Too many results, please be more specific")
+            except wikipedia.exceptions.PageError:
+                speak(f"No Wikipedia page found for {query}")
+        else:
+            speak("Please specify a topic to search on Wikipedia")
 
     elif "search" in c_lower:
-        # expects: "search python tutorials"
         query = c_lower.replace("search", "").strip()
         if query:
             webbrowser.open(f"https://www.google.com/search?q={query}")
